@@ -1,10 +1,17 @@
 import React from "react";
-import { SafeAreaView, View } from "react-native";
+import { SafeAreaView, Text, View } from "react-native";
 
 const Signup = () => {
   return (
-    <SafeAreaView>
-      <View>Login page</View>
+    <SafeAreaView
+      style={{
+        backgroundColor: "white",
+        flex: 1,
+      }}
+    >
+      <View>
+        <Text style={{}}>Welcome to your corner </Text>
+      </View>
     </SafeAreaView>
   );
 };
