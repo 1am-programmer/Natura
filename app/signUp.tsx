@@ -3,6 +3,7 @@ import {
   buttonStyling,
   headingStyling,
   InputStyling,
+  ScreenStyling,
 } from "@/constants/Styles";
 import React from "react";
 import {
@@ -15,13 +16,7 @@ import {
 
 const Signup = () => {
   return (
-    <SafeAreaView
-      style={{
-        backgroundColor: "white",
-        flex: 1,
-        padding: 10,
-      }}
-    >
+    <SafeAreaView style={ScreenStyling}>
       <View>
         <Text
           style={{
@@ -29,7 +24,7 @@ const Signup = () => {
             fontWeight: 700,
             fontSize: 25,
             textAlign: "center",
-            padding: 1,
+            padding: 10,
           }}
         >
           Hey, Welcome.

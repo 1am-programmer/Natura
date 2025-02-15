@@ -24,7 +24,7 @@ export const InputStyling = {
 export const ScreenStyling = {
   backgroundColor: "white",
   flex: 1,
-  padding: 5,
+  padding: 10,
 };
 
 export const buttonStyling = {
