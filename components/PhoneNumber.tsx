@@ -1,4 +1,3 @@
-import { bodyText, headingStyling, InputStyling } from "@/constants/Styles";
 import React, { useState, useRef } from "react";
 import {
   SafeAreaView,

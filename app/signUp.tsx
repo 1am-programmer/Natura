@@ -1,10 +1,15 @@
+import PhoneNumber from "@/components/PhoneNumber";
 import {
-  bodyText,
+  authText,
   buttonStyling,
+  formText,
   headingStyling,
+  importantField,
   InputStyling,
   ScreenStyling,
+  subHeading,
 } from "@/constants/Styles";
+import { Link } from "expo-router";
 import React from "react";
 import {
   SafeAreaView,
@@ -18,30 +23,56 @@ const Signup = () => {
   return (
     <SafeAreaView style={ScreenStyling}>
       <View>
-        <Text
-          style={{
-            color: "#51004F",
-            fontWeight: 700,
-            fontSize: 25,
-            textAlign: "center",
-            padding: 10,
-          }}
-        >
-          Hey, Welcome.
+        <Text style={headingStyling}>You&apos;re here !</Text>
+        <Text style={subHeading}>
+          Please fill in your details to get started
         </Text>
-        <Text style={bodyText}>Please confirm your Name and mobile number</Text>
 
-        <View style={{}}>
+        <View style={{ flex: 1 }}>
           <View>
+            <Text style={formText}>
+              First Name
+              <Text style={importantField}>*</Text>
+            </Text>
             <TextInput
               style={InputStyling}
-              placeholder="First Name"
+              placeholder="Natura"
               placeholderTextColor={"gray"}
             />
+          </View>
 
+          <View>
+            <Text style={formText}>
+              Last Name
+              <Text style={importantField}>*</Text>
+            </Text>
             <TextInput
               style={InputStyling}
-              placeholder="Last Name"
+              placeholder="Natura"
+              placeholderTextColor={"gray"}
+            />
+          </View>
+
+          <View>
+            <Text style={formText}>
+              E-mail
+              <Text style={importantField}>*</Text>
+            </Text>
+            <TextInput
+              style={InputStyling}
+              placeholder="Natura**@gmail.com"
+              placeholderTextColor={"gray"}
+            />
+          </View>
+
+          <View>
+            <Text style={formText}>
+              Password
+              <Text style={importantField}>*</Text>
+            </Text>
+            <TextInput
+              style={InputStyling}
+              placeholder="N4**a"
               placeholderTextColor={"gray"}
             />
           </View>
@@ -56,6 +87,22 @@ const Signup = () => {
               Create Account
             </Text>
           </TouchableOpacity>
+
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: 2,
+              alignItems: "center",
+            }}
+          >
+            <Text style={subHeading}>Already have an account? </Text>
+            <TouchableOpacity>
+              <Link href={"/login"}>
+                <Text style={authText}>Login</Text>
+              </Link>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     </SafeAreaView>
