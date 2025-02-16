@@ -3,6 +3,6 @@ import { ThemedView } from "@/components/ThemedView";
 import { Link } from "expo-router";
 import { ScreenStyling } from "@/constants/Styles";
 
-export default function Onboarding() {
-  return <SafeAreaView style={ScreenStyling}>Onboarding screen</SafeAreaView>;
+export default function Onboard() {
+  return <SafeAreaView style={ScreenStyling}>onboard</SafeAreaView>;
 }

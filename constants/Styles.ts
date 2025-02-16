@@ -1,4 +1,4 @@
-import { TextStyle } from "react-native";
+import { TextStyle, ViewStyle } from "react-native";
 
 export const headingStyling: TextStyle = {
   color: "#51004F",
@@ -34,10 +34,6 @@ export const InputStyling = {
   borderWidth: 1,
   borderColor: "gray",
   marginVertical: 10,
-  // borderBottomWidth: 1,
-  // borderTopWidth: 0,
-  // borderLeftWidth: 0,
-  // borderRightWidth: 0,
 };
 
 export const ScreenStyling = {
@@ -52,4 +48,23 @@ export const buttonStyling = {
   padding: 10,
   borderRadius: 10,
   marginVertical: 5,
+};
+
+export const settingHero = {
+  background: "linear-gradient(to right, #F5B7CA, #A83F98, #81017F)",
+  flex: 1,
+  padding: 10,
+  borderRadius: 10,
+  marginVertical: 5,
+};
+export const settingNavs: ViewStyle = {
+  display: "flex",
+  flexDirection: "column",
+  gap: 20,
+};
+export const settingLinks: TextStyle = {
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "space-between",
+  alignItems: "center",
 };
