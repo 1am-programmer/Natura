@@ -70,11 +70,9 @@ const login = () => {
             }}
           >
             <Text style={subHeading}>Don&apos;t have an account? </Text>
-            <TouchableOpacity>
-              <Link href={"/signUp"}>
-                <Text style={authText}>Sign up</Text>
-              </Link>
-            </TouchableOpacity>
+            <Link href={"/signUp"}>
+              <Text style={authText}>Sign up</Text>
+            </Link>
           </View>
         </View>
       </View>

@@ -97,11 +97,9 @@ const Signup = () => {
             }}
           >
             <Text style={subHeading}>Already have an account? </Text>
-            <TouchableOpacity>
-              <Link href={"/login"}>
-                <Text style={authText}>Login</Text>
-              </Link>
-            </TouchableOpacity>
+            <Link href={"/login"}>
+              <Text style={authText}>Login</Text>
+            </Link>
           </View>
         </View>
       </View>

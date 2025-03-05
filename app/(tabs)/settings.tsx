@@ -44,8 +44,10 @@ const settingRoute = [
 ];
 
 export default function Setting() {
-  const userName = "Daniel Cee";
-  const userEmail = "daniel@gmail.com";
+  const user = {
+    name: "Daniel",
+    email: "daniel@gmail.com",
+  };
 
   return (
     <SafeAreaView
@@ -54,11 +56,94 @@ export default function Setting() {
         backgroundColor: "#fff",
       }}
     >
-      <View style={{}}>
-        <Text>{userName}</Text>
-        <Text>{userEmail}</Text>
-      </View>
+      <ImageBackground
+        source={require("@/assets/images/settinghero.png")} // Ensure it's a valid image format
+        style={{
+          width: "100%",
+          height: 100,
+          justifyContent: "center",
+          paddingHorizontal: 15,
+          position: "relative",
+        }}
+      >
+        {/* Overlay Color */}
+        <View
+          style={{
+            ...StyleSheet.absoluteFillObject,
+            backgroundColor: "#81017F",
+            opacity: 0.8,
+          }}
+        />
 
+        {/* User Info & Navigation Link */}
+        <Link
+          href={"/(setting)/editProfile"}
+          style={
+            {
+              // position: "absolute",
+              //  display: "flex",
+              // flexDirection: "row",
+              // alignItems: "center",
+              // width: "100%",
+              // justifyContent: "space-between",
+              // paddingHorizontal: 25,
+            }
+          }
+        >
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              width: "100%",
+              justifyContent: "space-between",
+              paddingHorizontal: 10,
+            }}
+          >
+            <View
+              style={{ flexDirection: "row", alignItems: "center", gap: 10 }}
+            >
+              <View
+                style={{
+                  width: 50,
+                  height: 50,
+                  borderRadius: 25,
+                  backgroundColor: "#fff",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <Text
+                  style={{ fontSize: 20, fontWeight: "bold", color: "#81017F" }}
+                >
+                  {user.name.charAt(0)}
+                </Text>
+              </View>
+
+              <View>
+                <Text
+                  style={{ color: "#fff", fontSize: 20, fontWeight: "bold" }}
+                >
+                  {user.name}
+                </Text>
+                <Text style={{ color: "#fff", fontSize: 16 }}>
+                  {user.email}
+                </Text>
+              </View>
+            </View>
+
+            <View style={{ paddingHorizontal: 25 }}>
+              <FontAwesome
+                name="chevron-circle-right"
+                size={24}
+                color="white"
+              />
+            </View>
+          </View>
+        </Link>
+      </ImageBackground>
+
+      {/* Settings Section */}
       <View style={ScreenStyling}>
         <View style={settingNavs}>
           {settingRoute.map((item) => (
@@ -70,10 +155,6 @@ export default function Setting() {
                 padding: 25,
                 borderColor: "#81017F",
                 borderRadius: 5,
-                // display: "flex",
-                // flexDirection: "row",
-                // justifyContent: "space-between",
-                // alignItems: "center",
               }}
             >
               <View
@@ -100,6 +181,20 @@ export default function Setting() {
             </Link>
           ))}
         </View>
+      </View>
+
+      {/* Logout Button */}
+      <View
+        style={{
+          padding: 25,
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          gap: 10,  
+        }}
+      >
+        <FontAwesome name="sign-out" size={22} color="#81017F" />
+        <Text>Logout</Text>
       </View>
     </SafeAreaView>
   );
