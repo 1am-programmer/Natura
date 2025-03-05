@@ -70,8 +70,17 @@ export default function Setting() {
   const userEmail = "daniel@gmail.com";
 
   return (
-    <SafeAreaView>
-      <View style={{}}>
+    <SafeAreaView
+      style={{
+        flex: 1,
+        backgroundColor: "#fff",
+      }}
+    >
+      <View
+        style={{
+          backgroundColor: "blue",
+        }}
+      >
         {/* <ImageBackground
           source={require("@/assets/images/onboard.svg")} // Ensure correct path
           style={styles.background}
