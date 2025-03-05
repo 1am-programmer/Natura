@@ -8,62 +8,40 @@ import {
   Image,
 } from "react-native";
 import { Link } from "expo-router";
-import {
-  ScreenStyling,
-  settingLinks,
-  settingNavs,
-  settingText,
-} from "@/constants/Styles";
+import { ScreenStyling, settingNavs } from "@/constants/Styles";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 const settingRoute = [
   {
+    id: 1,
     icon: <FontAwesome name="home" size={24} color={"#81017F"} />,
     name: "Address",
     path: "/(setting)/address" as any,
-    open: (
-      <FontAwesome size={32} name="arrow-circle-o-right" color={"#81017F"} />
-    ),
+    openIcon: <FontAwesome size={24} name="chevron-right" color={"#81017F"} />,
   },
   {
+    id: 2,
     icon: <FontAwesome name="paypal" size={24} color={"#81017F"} />,
     name: "Payment",
     path: "/(setting)/payment" as any,
-    open: (
-      <FontAwesome size={32} name="arrow-circle-o-right" color={"#81017F"} />
-    ),
+    openIcon: <FontAwesome size={24} name="chevron-right" color={"#81017F"} />,
   },
   {
+    id: 3,
     icon: <FontAwesome name="language" size={24} color={"#81017F"} />,
     name: "Language",
     path: "/(setting)/language" as any,
-    open: (
-      <FontAwesome size={32} name="arrow-circle-o-right" color={"#81017F"} />
-    ),
+    openIcon: <FontAwesome size={24} name="chevron-right" color={"#81017F"} />,
   },
 
   {
+    id: 4,
     icon: <FontAwesome name="info-circle" size={24} color={"#81017F"} />,
     name: "About",
     path: "/(setting)/about" as any,
-    open: (
-      <FontAwesome size={32} name="arrow-circle-o-right" color={"#81017F"} />
-    ),
+    openIcon: <FontAwesome size={24} name="chevron-right" color={"#81017F"} />,
   },
 ];
-
-const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-    resizeMode: "cover",
-    justifyContent: "center",
-  },
-  overlay: {
-    ...StyleSheet.absoluteFillObject,
-    backgroundColor: "#81017F",
-    opacity: 0.5,
-  },
-});
 
 export default function Setting() {
   const userName = "Daniel Cee";
@@ -76,54 +54,50 @@ export default function Setting() {
         backgroundColor: "#fff",
       }}
     >
-      <View
-        style={{
-          backgroundColor: "blue",
-        }}
-      >
-        {/* <ImageBackground
-          source={require("@/assets/images/onboard.svg")} // Ensure correct path
-          style={styles.background}
-        >
-          <View style={styles.overlay} />
-        </ImageBackground> */}
-        <View
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-between",
-            padding: 20,
-          }}
-        >
-          <View>
-            <Text>{userName}</Text>
-            <Text>{userEmail}</Text>
-          </View>
-          <TouchableOpacity>
-            <Link href={"/(setting)/editProfile"} style={settingLinks}>
-              <FontAwesome
-                size={32}
-                name="arrow-circle-o-right"
-                color={"#fff"}
-              />
-            </Link>
-          </TouchableOpacity>
-        </View>
+      <View style={{}}>
+        <Text>{userName}</Text>
+        <Text>{userEmail}</Text>
       </View>
 
       <View style={ScreenStyling}>
         <View style={settingNavs}>
           {settingRoute.map((item) => (
-            <TouchableOpacity>
-              <Link key={item.name} href={item.path} style={settingLinks}>
-                <Text style={settingText}>
+            <Link
+              key={item.id}
+              href={item.path}
+              style={{
+                borderWidth: 1,
+                padding: 25,
+                borderColor: "#81017F",
+                borderRadius: 5,
+                // display: "flex",
+                // flexDirection: "row",
+                // justifyContent: "space-between",
+                // alignItems: "center",
+              }}
+            >
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  width: "100%",
+                }}
+              >
+                <View
+                  style={{
+                    flexDirection: "row",
+                    alignItems: "center",
+                    gap: 10,
+                  }}
+                >
                   {item.icon}
-                  {item.name}
-                </Text>
-                {item.open}
-              </Link>
-            </TouchableOpacity>
+                  <Text>{item.name}</Text>
+                </View>
+
+                {item.openIcon}
+              </View>
+            </Link>
           ))}
         </View>
       </View>

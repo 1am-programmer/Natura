@@ -25,7 +25,7 @@ const login = () => {
         <Text style={headingStyling}>Welcome back</Text>
         <Text style={subHeading}>Please input your email and password</Text>
 
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1, paddingHorizontal: 5 }}>
           <View>
             <Text style={formText}>
               E-mail

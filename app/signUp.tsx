@@ -28,7 +28,7 @@ const Signup = () => {
           Please fill in your details to get started
         </Text>
 
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1, paddingHorizontal: 5 }}>
           <View>
             <Text style={formText}>
               First Name
