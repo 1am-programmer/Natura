@@ -53,7 +53,7 @@ export default function Setting() {
     <SafeAreaView
       style={{
         flex: 1,
-        backgroundColor: "#fff",
+        backgroundColor: "white",
       }}
     >
       <ImageBackground
@@ -144,7 +144,7 @@ export default function Setting() {
       </ImageBackground>
 
       {/* Settings Section */}
-      <View style={ScreenStyling}>
+      <View style={{ padding: 15, flex: 1 }}>
         <View style={settingNavs}>
           {settingRoute.map((item) => (
             <Link
@@ -190,7 +190,7 @@ export default function Setting() {
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
-          gap: 10,  
+          gap: 10,
         }}
       >
         <FontAwesome name="sign-out" size={22} color="#81017F" />

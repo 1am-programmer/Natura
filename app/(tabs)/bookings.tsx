@@ -36,7 +36,7 @@ export default function Bookings() {
           tabBarIndicatorStyle: { backgroundColor: "#81017F", height: 4 },
           tabBarActiveTintColor: "#81017F", // Selected tab text color
           tabBarInactiveTintColor: "gray", // Unselected tab text color
-          // tabBarItemStyle: ({ focused }: any) => ({
+          // tabBarItemStyle: ({ focused }) => ({
           //   backgroundColor: focused ? "#A83F98" : "white",
           //   borderRadius: 10,
           //   marginHorizontal: 5,
