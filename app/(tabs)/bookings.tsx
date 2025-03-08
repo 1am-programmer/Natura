@@ -1,53 +1,51 @@
-import {
-  Text,
-  View,
-  SafeAreaView,
-  Image,
-  TouchableOpacity,
-} from "react-native";
-import {
-  buttonStyling,
-  headingStyling,
-  ScreenStyling,
-  subHeading,
-} from "@/constants/Styles";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
-import BookingTabs from "@/components/BookingTabs";
+import React from "react";
+import { SafeAreaView, Text } from "react-native";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import PastBookings from "../bookings/PastBookings";
+import UpcomingBookings from "../bookings/Upcoming";
+
+const Tab = createMaterialTopTabNavigator();
+
+// const UpcomingBookings = () => {
+//   return (
+//     <SafeAreaView
+//       style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+//     >
+//       <Text>Upcoming Bookings</Text>
+//     </SafeAreaView>
+//   );
+// };
+
+// const PastBookings = () => {
+//   return (
+//     <SafeAreaView
+//       style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+//     >
+//       <Text>Past Bookings</Text>
+//     </SafeAreaView>
+//   );
+// };
 
 export default function Bookings() {
-  const spaName = "Daniel Cee";
-
   return (
-    <SafeAreaView style={ScreenStyling}>
-      <Text>Bookings</Text>
-
-      <View>Upcoming</View>
-      <View>Past</View>
-      <View>
-        <Text>Empty</Text>
-        <Text style={headingStyling}>You haven&apos;t booked yet</Text>
-        <Text style={subHeading}>
-          You don&apos;t have any upcoming bookings to display
-        </Text>
-      </View>
-
-      <TouchableOpacity
-        style={{
-          background: "linear-gradient(to right, #F5B7CA, #A83F98, #81017F)",
-          padding: 10,
-          borderRadius: 10,
-          marginVertical: 5,
-        }}
+    <SafeAreaView style={{ flex: 1 }}>
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarStyle: { backgroundColor: "white" },
+          tabBarLabelStyle: { fontSize: 14, fontWeight: "bold" },
+          tabBarIndicatorStyle: { backgroundColor: "#81017F", height: 4 },
+          tabBarActiveTintColor: "#81017F", // Selected tab text color
+          tabBarInactiveTintColor: "gray", // Unselected tab text color
+          // tabBarItemStyle: ({ focused }: any) => ({
+          //   backgroundColor: focused ? "#A83F98" : "white",
+          //   borderRadius: 10,
+          //   marginHorizontal: 5,
+          // }),
+        })}
       >
-        <Text
-          style={{
-            textAlign: "center",
-            color: "white",
-          }}
-        >
-          Book now
-        </Text>
-      </TouchableOpacity>
+        <Tab.Screen name="Upcoming" component={UpcomingBookings} />
+        <Tab.Screen name="Past" component={PastBookings} />
+      </Tab.Navigator>
     </SafeAreaView>
   );
 }
