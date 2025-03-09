@@ -18,6 +18,7 @@ import {
   TouchableOpacity,
   Text,
 } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 
 const Signup = () => {
   return (
@@ -77,17 +78,34 @@ const Signup = () => {
             />
           </View>
 
-          <TouchableOpacity style={buttonStyling}>
-            <Text
+          <LinearGradient
+            colors={["#F5B7CA", "#A83F98", "#81017F"]}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 0 }}
+            style={{
+              padding: 10,
+              width: "100%",
+              borderRadius: 5,
+              marginTop: 10,
+            }}
+          >
+            <TouchableOpacity
               style={{
-                textAlign: "center",
-                color: "white",
+                width: "100%",
+                alignItems: "center",
               }}
             >
-              Create Account
-            </Text>
-          </TouchableOpacity>
-
+              <Text
+                style={{
+                  textAlign: "center",
+                  color: "white",
+                  fontSize: 15,
+                }}
+              >
+                Create Account
+              </Text>
+            </TouchableOpacity>
+          </LinearGradient>
           <View
             style={{
               display: "flex",

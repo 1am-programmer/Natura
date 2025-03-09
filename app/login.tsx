@@ -1,6 +1,5 @@
 import {
   authText,
-  buttonStyling,
   formText,
   headingStyling,
   importantField,
@@ -17,6 +16,7 @@ import {
   TouchableOpacity,
   Text,
 } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 
 const login = () => {
   return (
@@ -50,16 +50,34 @@ const login = () => {
             />
           </View>
 
-          <TouchableOpacity style={buttonStyling}>
-            <Text
+          <LinearGradient
+            colors={["#F5B7CA", "#A83F98", "#81017F"]}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 0 }}
+            style={{
+              padding: 10,
+              width: "100%",
+              borderRadius: 5,
+              marginTop: 10,
+            }}
+          >
+            <TouchableOpacity
               style={{
-                textAlign: "center",
-                color: "white",
+                width: "100%",
+                alignItems: "center",
               }}
             >
-              Login
-            </Text>
-          </TouchableOpacity>
+              <Text
+                style={{
+                  textAlign: "center",
+                  color: "white",
+                  fontSize: 15,
+                }}
+              >
+                Login
+              </Text>
+            </TouchableOpacity>
+          </LinearGradient>
 
           <View
             style={{

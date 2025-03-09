@@ -42,12 +42,13 @@ export const ScreenStyling = {
   padding: 20,
 };
 
-export const buttonStyling = {
-  background: "linear-gradient(to right, #F5B7CA, #A83F98, #81017F)",
+export const buttonStyling: ViewStyle = {
   flex: 1,
   padding: 10,
   borderRadius: 10,
   marginVertical: 5,
+  alignItems: "center",
+  justifyContent: "center",
 };
 
 export const settingHero = {
